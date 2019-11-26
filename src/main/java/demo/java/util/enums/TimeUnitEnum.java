@@ -8,10 +8,6 @@ public enum TimeUnitEnum {
 
     // 纳秒
     NANOSECONDS(0) {
-        public void setUnit(int unit) {
-            super.setUnit(0);
-        }
-
         public double toNanos(long d)   { return d; }
         public double toMicros(long d)  { return d/(C1/C0); }
         public double toMillis(long d)  { return d/(C2/C0); }
@@ -34,9 +30,6 @@ public enum TimeUnitEnum {
 
     // 毫秒
     MILLISECONDS(2) {
-        public void setUnit(int unit) {
-            super.setUnit(2);
-        }
         public double toNanos(long d) { return x(d, C2/C0, MAX/(C2/C0)); }
         public double toMicros(long d) { return x(d, C2/C1, MAX/(C2/C1)); }
         public double toMillis(long d) { return d; }
